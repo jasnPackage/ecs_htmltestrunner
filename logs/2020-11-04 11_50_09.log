@@ -1,0 +1,44 @@
+[2020-11-04 11:50:12,433-logger.py]-INFO:
+用例文件：C:/Users/Administrator/PycharmProjects/ECS\data\医生工作站\医生工作站-留观患者.xlsx
+用例编号：1.0
+接口名称：留观患者
+接口地址：/triage/divid/save
+用例名称：预置数据：添加待接诊患者
+用例描述：预置测试数据
+请求内容：id=&fullname=夏雨&cardnum=698515201409041200&bornday=1998-06-25&gender=男&tel=13525213245&card_type=01&parenttel=15721028988&reason=发烧3天，高烧不退&idcard=350814199806258560&address=江苏省南京市江宁区双龙大道1088号明月新寓花园&memberstel=夏东海&category=1&admission=步行&GreenChFlag=N&ThreeNoFlag=N&others=&consciousness=模糊&anamnesis=无&status=未接诊&source=自行来院&age=22岁&registertime=&sg=174&tz=68&il6=&crp=&cea=&afp=&myo=&ddimer=&fer=&ntprobnp=&hsctnl=&ckmb=&ctnt=&ca=&sighid=&handleid=&autograde=1001&finalgrade=&changereason=选择修改原因&reasondetail=修改原因:&hljl=已测体温超过38度，患者先要挂水退烧&nurse=高博&nurseid=10062&deptment=39&deptmentname=急诊内科&symtpomid=12562338488&symtpomzdyvalue=&symtpomzdygrade=&edts_ids=&edts_ids_qitastatus=false&edts_ids_qita=&mews_ids=&mews_score=&edts_score=&pain_score=2&fast_score=A&gcs_score=14&sign_grade=&dividtime=2020-10-07 13:34&signurl=&xgpj=&cixu=1&maxcixu=1&feijz=1&hisid=&PAADMVisitNumber=&savestatus=save&allergic_history=不详&supplement=&events_id=&events_name=&go_rct=0&remark=&GCS_xq=4,5,5&isFuzhen=N&isLiuguan=N&is_changegrade=0
+实际响应：{"total":null,"message":"保存成功","rows":{"sighid":"773514057348022272","grade":"1001","id":"2011040062","fullname":"夏雨","handleid":"773514057696149504","status":"未接诊"},"status":200}
+[2020-11-04 11:50:15,027-logger.py]-INFO:
+用例文件：C:/Users/Administrator/PycharmProjects/ECS\data\医生工作站\医生工作站-留观患者.xlsx
+用例编号：2.0
+接口名称：留观患者
+接口地址：/triagedoctor/index/admissions
+用例名称：预置数据：门诊患者-接诊患者
+用例描述：预置测试数据
+请求内容：userid=2000008&userName=王旭东&departId=3&depart=急诊神经内科&patient_id=2011040062&cardNum=698515201409041200&hand_id=758618679297441792&receiveTime=2020-11-04 11:50&sex=男&age=22岁&idnum=350814199806258560&tel=13525213245&fullname=夏雨
+实际响应：{"total":null,"message":"接诊成功","rows":{"saveResult":"1","id":"773514069708636160"},"status":200}
+[2020-11-04 11:50:15,045-logger.py]-INFO:检查点:"message":"接诊成功"--pass
+[2020-11-04 11:50:15,052-logger.py]-INFO:----------------
+[2020-11-04 11:50:15,060-logger.py]-INFO:检查点:"status":200--pass
+[2020-11-04 11:50:15,067-logger.py]-INFO:----------------
+[2020-11-04 11:50:17,073-logger.py]-INFO:
+用例文件：C:/Users/Administrator/PycharmProjects/ECS\data\医生工作站\医生工作站-留观患者.xlsx
+用例编号：3.0
+接口名称：留观患者
+接口地址：/triagedoctor/index/savePatientLeaveDirectionDoctor
+用例名称：预置数据：门诊患者-患者去向选择留观
+用例描述：预置测试数据
+请求内容：leavedirection={"dre":"留观","dremsg":""}&leaveTime=2020-11-04 11:50&patientid=2011040062&userId=2000008
+实际响应：{"total":null,"message":"操作成功","rows":1,"status":200}
+[2020-11-04 11:50:17,083-logger.py]-INFO:检查点:"message":"操作成功"--pass
+[2020-11-04 11:50:17,090-logger.py]-INFO:----------------
+[2020-11-04 11:50:17,097-logger.py]-INFO:检查点:"status":200--pass
+[2020-11-04 11:50:17,103-logger.py]-INFO:----------------
+[2020-11-04 11:50:19,205-logger.py]-INFO:
+用例文件：C:/Users/Administrator/PycharmProjects/ECS\data\医生工作站\医生工作站-留观患者.xlsx
+用例编号：4.0
+接口名称：留观患者
+接口地址：/triageobserve/index/getWard
+用例名称：预置数据：留观工作站-查询留观工作站Ward
+用例描述：预置测试数据
+请求内容：user_id=2000008
+实际响应：{"total":null,"message":"获取成功","rows":{"name":"留观室1","id":"584043716574969856"},"status":200}
