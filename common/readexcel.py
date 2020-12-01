@@ -13,6 +13,7 @@ class ExcelUtil():
         self.rowNum = self.table.nrows
         # 获取总列数
         self.colNum = self.table.ncols
+        self.excelPath = excelPath
 
     def dict_data(self):
         if self.rowNum <= 1:
@@ -23,6 +24,7 @@ class ExcelUtil():
             for i in list(range(self.rowNum - 1)):
                 s = {}
                 # 从第二行取对应values值
+                s['用例路径'] = self.excelPath
                 s['rowNum'] = i + 2
                 values = self.table.row_values(j)
                 for x in list(range(self.colNum)):

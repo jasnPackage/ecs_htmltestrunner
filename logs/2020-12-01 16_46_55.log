@@ -1,0 +1,400 @@
+[2020-12-01 16:46:57,536-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：1.0
+接口地址：/triage/divid/save
+用例名称：预置数据：添加待接诊患者
+用例描述：预置测试数据
+请求内容：id=&fullname=毛青&cardnum=698515201409066985&bornday=1993-09-06&gender=男&tel=13525213510&card_type=01&parenttel=15721028988&reason=发烧3天，高烧不退&idcard=350814199309068563&address=江苏省南京市鼓楼区归云堂30号金城花园&memberstel=夏东海&category=1&admission=步行&GreenChFlag=N&ThreeNoFlag=N&others=&consciousness=模糊&anamnesis=无&status=未接诊&source=自行来院&age=27岁&registertime=&sg=170&tz=55&il6=&crp=&cea=&afp=&myo=&ddimer=&fer=&ntprobnp=&hsctnl=&ckmb=&ctnt=&ca=&sighid=&handleid=&autograde=1002&finalgrade=&changereason=选择修改原因&reasondetail=修改原因:&hljl=已测体温超过38度，患者先要挂水退烧&nurse=高博&nurseid=10062&deptment=39&deptmentname=急诊内科&symtpomid=12562338488&symtpomzdyvalue=&symtpomzdygrade=&edts_ids=&edts_ids_qitastatus=false&edts_ids_qita=&mews_ids=&mews_score=&edts_score=&pain_score=2&fast_score=A&gcs_score=14&sign_grade=&dividtime=2020-10-07 13:34&signurl=&xgpj=&cixu=1&maxcixu=1&feijz=1&hisid=&PAADMVisitNumber=&savestatus=save&allergic_history=不详&supplement=&events_id=&events_name=&go_rct=0&remark=&GCS_xq=4,5,5&isFuzhen=N&isLiuguan=N&is_changegrade=0
+实际响应：{"total":null,"message":"保存成功","rows":{"sighid":"783373470623858688","grade":"1002","id":"2012010118","fullname":"毛青","handleid":"783373470716133376","status":"未接诊"},"status":200}
+[2020-12-01 16:46:57,538-logger.py]-INFO:预置数据用例，不需要检查点
+[2020-12-01 16:46:57,539-logger.py]-INFO:----------------
+[2020-12-01 16:46:57,540-logger.py]-INFO:
+
+
+[2020-12-01 16:46:57,894-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：2.0
+接口地址：/triagedoctor/index/admissions
+用例名称：预置数据：门诊患者-接诊患者
+用例描述：预置测试数据
+请求内容：userid=2000008&userName=王旭东&departId=3&depart=急诊神经内科&patient_id=2012010118&cardNum=698515201409066985&hand_id=783373470716133376&receiveTime=2020-12-01 16:46&sex=男&age=27岁&idnum=350814199309068563&tel=13525213510&fullname=毛青
+实际响应：{"total":null,"message":"接诊成功","rows":{"saveResult":"1","id":"783373473077526528"},"status":200}
+[2020-12-01 16:46:57,897-logger.py]-INFO:检查点:"message":"接诊成功"--pass
+[2020-12-01 16:46:57,898-logger.py]-INFO:----------------
+[2020-12-01 16:46:57,900-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:46:57,902-logger.py]-INFO:----------------
+[2020-12-01 16:46:57,903-logger.py]-INFO:
+
+
+[2020-12-01 16:46:58,212-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：3.0
+接口地址：/triagedoctor/index/savePatientLeaveDirectionDoctor
+用例名称：预置数据：门诊患者-患者去向选择留观
+用例描述：预置测试数据
+请求内容：leavedirection={"dre":"留观","dremsg":""}&leaveTime=2020-12-01 16:46&patientid=2012010118&userId=2000008
+实际响应：{"total":null,"message":"操作成功","rows":1,"status":200}
+[2020-12-01 16:46:58,214-logger.py]-INFO:检查点:"message":"操作成功"--pass
+[2020-12-01 16:46:58,215-logger.py]-INFO:----------------
+[2020-12-01 16:46:58,216-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:46:58,217-logger.py]-INFO:----------------
+[2020-12-01 16:46:58,218-logger.py]-INFO:
+
+
+[2020-12-01 16:46:58,654-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：4.0
+接口地址：/triageobserve/index/seachBedInfo
+用例名称：留观工作站-查询留观室床位信息
+用例描述：测试留观工作站-查询留观室床位信息
+请求内容：department=留观室1
+实际响应：{"total":16,"message":"查询成功","rows":[{"receivedepartment":null,"arrivetime":null,"depart_id":"584043716574969856","suizhen":"0","observegrade":null,"type":null,"grade1":null,"STATUS":"已接诊","leavetime":null,"tel":"13322221111","id":"2011200008","others":"","receivetime":null,"dividtime":null,"consciousness":"模糊","diagnosis":null,"admission":"平车","dividenurse":null,"registertime":null,"bornday":"2020-03-10","patient_id":"2011200008","greenchannel":"N","grade":null,"gender":"男","observegradecolor":null,"hisid":"2004140006","addbedsign":"0","cixu":null,"grade_color":null,"bedarrivetime":"2020-11-26 13:26:49","bedleavetime":null,"finalgrade":null,"bed_id":"638375526003638272","rowno":5,"falling":15,"bed_num":"留观1床","process":"","address":"的收费分为","anamnesis":"糖尿病","bedSTATUS":"使用中","dividdepartment":null,"doctor":null,"cardnum":"213423432","braden":null,"PADDiagDesc":null,"fullname":"又让","category":"7","autograde":null,"age":"8月","memberstel":"说到底","changereason":null},{"receivedepartment":null,"arrivetime":"2020-11-25 13:05:00","depart_id":"584043716574969856","suizhen":"0","observegrade":null,"type":"特殊,乙流,本院,甲流","grade1":null,"STATUS":"已接诊","leavetime":null,"tel":"14730643237","id":"2011250001","others":"","receivetime":null,"dividtime":null,"consciousness":"清醒","diagnosis":null,"admission":"儿童抱入","dividenurse":null,"registertime":null,"bornday":"1990-06-08","patient_id":"2011250001","greenchannel":"N","grade":null,"gender":"男","observegradecolor":null,"hisid":"","addbedsign":"0","cixu":null,"grade_color":null,"bedarrivetime":"2020-11-26 14:45:08","bedleavetime":"2020-11-27 11:42:00","finalgrade":null,"bed_id":"638375526267879424","rowno":3,"falling":50,"bed_num":"留观2床","process":"","address":"山东省呼和浩特县海陵六安街9号","anamnesis":"无","bedSTATUS":"使用中","dividdepartment":null,"doctor":null,"cardnum":"3557668527024801","braden":null,"PADDiagDesc":null,"fullname":"钟峰","category":"2","autograde":null,"age":"30岁","memberstel":"陈璐","changereason":null},{"receivedepartment":null,"arrivetime":null,"depart_id":"584043716574969856","suizhen":"","observegrade":null,"type":null,"grade1":null,"STATUS":"未接诊","leavetime":null,"tel":"","id":"2011200009","others":"","receivetime":null,"dividtime":null,"consciousness":"","diagnosis":null,"admission":"","dividenurse":null,"registertime":null,"bornday":"","patient_id":"2011200009","greenchannel":"N","grade":null,"gender":"未说明","observegradecolor":null,"hisid":"2004140006","addbedsign":"0","cixu":null,"grade_color":null,"bedarrivetime":"2020-11-25 09:12:51","bedleavetime":null,"finalgrade":null,"bed_id":"638375526465011712","rowno":6,"falling":null,"bed_num":"留观3床","process":"","address":"","anamnesis":"","bedSTATUS":"使用中","dividdepartment":null,"doctor":null,"cardnum":"55698","braden":null,"PADDiagDesc":null,"fullname":"兔兔","category":"","autograde":null,"age":"","memberstel":"","changereason":null},{"receivedepartment":null,"arrivetime":null,"depart_id":"584043716574969856","suizhen":"0","observegrade":null,"type":null,"grade1":null,"STATUS":null,"leavetime":null,"tel":null,"id":null,"others":null,"receivetime":null,"dividtime":null,"consciousness":null,"diagnosis":null,"admission":null,"dividenurse":null,"registertime":null,"bornday":null,"patient_id":"2012010111","greenchannel":null,"grade":null,"gender":null,"observegradecolor":null,"hisid":null,"addbedsign":"0","cixu":null,"grade_color":null,"bedarrivetime":"2020-12-01 16:34:55","bedleavetime":"2020-11-25 10:17:00","finalgrade":null,"bed_id":"638375526595035136","rowno":7,"falling":null,"bed_num":"留观4床","process":"","address":null,"anamnesis":null,"bedSTATUS":"使用中","dividdepartment":null,"doctor":null,"cardnum":null,"braden":null,"PADDiagDesc":null,"fullname":null,"category":null,"autograde":null,"age":null,"memberstel":null,"changereason":null},{"receivedepartment":null,"arrivetime":null,"depart_id":"584043716574969856","suizhen":"","observegrade":null,"type":"本院","grade1":null,"STATUS":"已接诊","leavetime":null,"tel":"15753497212","id":"2011240002","others":"","receivetime":null,"dividtime":null,"consciousness":"清醒","diagnosis":null,"admission":"平车","dividenurse":null,"registertime":null,"bornday":"1993-01-22","patient_id":"2011240002","greenchannel":"N","grade":null,"gender":"女","observegradecolor":null,"hisid":"65114521451","addbedsign":"0","cixu":null,"grade_color":null,"bedarrivetime":"2020-11-24 13:54:15","bedleavetime":"2020-11-26 15:01:00","finalgrade":null,"bed_id":"638375526595035137","rowno":8,"falling":null,"bed_num":"留观5床","process":"","address":"上海市巢湖县门头沟乌鲁木齐路Q座 ","anamnesis":"无","bedSTATUS":"使用中","dividdepartment":null,"doctor":null,"cardnum":"4836807196849681","braden":null,"PADDiagDesc":null,"fullname":"安凤英","category":"2","autograde":null,"age":"27岁","memberstel":"许华","changereason":null},{"receivedepartment":"584043716574969856","arrivetime":"2020-11-26 10:19:00","depart_id":"584043716574969856","suizhen":"0","observegrade":"1002","type":null,"grade1":"1002","STATUS":"已接诊","leavetime":null,"tel":"181945443681","id":"2011260003","others":"","receivetime":"2020-11-26 16:14:01","dividtime":"2020-11-26 10:19:00","consciousness":"清醒","diagnosis":null,"admission":"扶走","dividenurse":"王旭东","registertime":null,"bornday":"1989-03-19","patient_id":"2011260003","greenchannel":"N","grade":"1002","gender":"女","observegradecolor":"#f2da61","hisid":"","addbedsign":"0","cixu":"5","grade_color":"#f2da61","bedarrivetime":"2020-11-26 16:14:01","bedleavetime":"2020-11-27 10:24:00","finalgrade":"","bed_id":"710443578752499712","rowno":2,"falling":9,"bed_num":"留观6床","process":"","address":"1西藏自治区健市滨城六安路p座 ","anamnesis":"COPD","bedSTATUS":"使用中","dividdepartment":"3","doctor":"","cardnum":"4008900454043394","braden":14,"PADDiagDesc":null,"fullname":"侯东","category":"2","autograde":"1002","age":"31岁","memberstel":"侯敏1","changereason":""},{"receivedepartment":null,"arrivetime":"2020-07-09 14:05:00","depart_id":"584043716574969856","suizhen":"0","observegrade":null,"type":null,"grade1":null,"STATUS":"已接诊","leavetime":null,"tel":"138138138131","id":"2020070820","others":"","receivetime":null,"dividtime":null,"consciousness":"","diagnosis":null,"admission":"轮椅","dividenurse":null,"registertime":null,"bornday":"1983-05-21","patient_id":"2020070820","greenchannel":"","grade":null,"gender":"女","observegradecolor":null,"hisid":"2004140006","addbedsign":"0","cixu":null,"grade_color":null,"bedarrivetime":"2020-11-26 13:28:22","bedleavetime":null,"finalgrade":null,"bed_id":"710853545162702848","rowno":9,"falling":null,"bed_num":"留观7床","process":"","address":"1","anamnesis":"COPD","bedSTATUS":"使用中","dividdepartment":null,"doctor":null,"cardnum":"6464646764","braden":null,"PADDiagDesc":null,"fullname":"葛某","category":"7","autograde":null,"age":"37岁 ","memberstel":"3","changereason":null},{"receivedepartment":null,"arrivetime":null,"depart_id":"584043716574969856","suizhen":"0","observegrade":null,"type":null,"grade1":null,"STATUS":"已接诊","leavetime":null,"tel":"13147536012","id":"2011260004","others":"","receivetime":null,"dividtime":null,"consciousness":"清醒","diagnosis":null,"admission":"平车","dividenurse":null,"registertime":null,"bornday":"1975-12-06","patient_id":"2011260004","greenchannel":"N","grade":null,"gender":"男","observegradecolor":null,"hisid":"","addbedsign":"0","cixu":null,"grade_color":null,"bedarrivetime":"2020-11-26 15:23:37","bedleavetime":null,"finalgrade":null,"bed_id":"710853545229811712","rowno":10,"falling":null,"bed_num":"留观8床","process":"","address":"江苏省金凤县沈北新宜都街e座 ","anamnesis":"无","bedSTATUS":"使用中","dividdepartment":null,"doctor":null,"cardnum":"4405848745581","braden":null,"PADDiagDesc":null,"fullname":"罗英","category":"2","autograde":null,"age":"44岁","memberstel":"李宁","changereason":null},{"receivedepartment":null,"arrivetime":null,"depart_id":"584043716574969856","suizhen":"0","observegrade":null,"type":null,"grade1":null,"STATUS":"已接诊","leavetime":null,"tel":"13106328283","id":"2011260001","others":"","receivetime":null,"dividtime":null,"consciousness":"清醒","diagnosis":null,"admission":"平车","dividenurse":null,"registertime":null,"bornday":"1974-05-29","patient_id":"2011260001","greenchannel":"N","grade":null,"gender":"男","observegradecolor":null,"hisid":"","addbedsign":"0","cixu":null,"grade_color":null,"bedarrivetime":"2020-11-26 16:01:04","bedleavetime":null,"finalgrade":null,"bed_id":"710853545292726272","rowno":11,"falling":null,"bed_num":"留观9床","process":"","address":"广东省台北县蓟州昆明街g座 ","anamnesis":"无","bedSTATUS":"使用中","dividdepartment":null,"doctor":null,"cardnum":"3579912298250961","braden":null,"PADDiagDesc":null,"fullname":"朱佳","category":"2","autograde":null,"age":"46岁","memberstel":"梁雪梅","changereason":null},{"receivedepartment":null,"arrivetime":null,"depart_id":"584043716574969856","suizhen":"0","observegrade":null,"type":"乙流","grade1":null,"STATUS":"未接诊","leavetime":null,"tel":"18912943622","id":"2011250003","others":null,"receivetime":null,"dividtime":null,"consciousness":null,"diagnosis":null,"admission":null,"dividenurse":null,"registertime":null,"bornday":null,"patient_id":"2011250003","greenchannel":null,"grade":null,"gender":"女","observegradecolor":null,"hisid":null,"addbedsign":"0","cixu":null,"grade_color":null,"bedarrivetime":"2020-11-26 13:31:31","bedleavetime":null,"finalgrade":null,"bed_id":"710853545292726273","rowno":1,"falling":15,"bed_num":"留观10床","process":"","address":null,"anamnesis":null,"bedSTATUS":"使用中","dividdepartment":null,"doctor":null,"cardnum":"38402871773788","braden":18,"PADDiagDesc":null,"fullname":"卢玲","category":null,"autograde":null,"age":"24岁","memberstel":null,"changereason":null},{"receivedepartment":null,"arrivetime":null,"depart_id":"584043716574969856","suizhen":"0","observegrade":null,"type":null,"grade1":null,"STATUS":"已接诊","leavetime":null,"tel":"14591723335","id":"2011260009","others":"","receivetime":null,"dividtime":null,"consciousness":"清醒","diagnosis":null,"admission":"平车","dividenurse":null,"registertime":null,"bornday":"1994-01-14","patient_id":"2011260009","greenchannel":"N","grade":null,"gender":"女","observegradecolor":null,"hisid":"","addbedsign":"0","cixu":null,"grade_color":null,"bedarrivetime":"2020-11-27 15:39:07","bedleavetime":null,"finalgrade":null,"bed_id":"710853545359835136","rowno":13,"falling":null,"bed_num":"留观11床","process":"<br>","address":"黑龙江省海门县南溪阎街C座 ","anamnesis":"无","bedSTATUS":"使用中","dividdepartment":null,"doctor":null,"cardnum":"503897628817","braden":null,"PADDiagDesc":null,"fullname":"刘杨","category":"2","autograde":null,"age":"26岁","memberstel":"王凤兰","changereason":null},{"receivedepartment":null,"arrivetime":null,"depart_id":"584043716574969856","suizhen":"0","observegrade":null,"type":"甲流","grade1":null,"STATUS":"已接诊","leavetime":null,"tel":"13322221111","id":"2011230002","others":"","receivetime":null,"dividtime":null,"consciousness":null,"diagnosis":null,"admission":null,"dividenurse":null,"registertime":null,"bornday":"1995-07-05","patient_id":"2011230002","greenchannel":"N","grade":null,"gender":"男","observegradecolor":null,"hisid":"","addbedsign":"0","cixu":null,"grade_color":null,"bedarrivetime":"2020-11-27 15:57:50","bedleavetime":null,"finalgrade":null,"bed_id":"710853545359835137","rowno":14,"falling":null,"bed_num":"留观12床","process":"","address":"","anamnesis":"","bedSTATUS":"使用中","dividdepartment":null,"doctor":null,"cardnum":"234254535","braden":null,"PADDiagDesc":null,"fullname":"哈哈哈","category":"7","autograde":null,"age":"25岁","memberstel":"","changereason":null},{"receivedepartment":null,"arrivetime":null,"depart_id":"584043716574969856","suizhen":"0","observegrade":null,"type":null,"grade1":null,"STATUS":null,"leavetime":null,"tel":null,"id":null,"others":null,"receivetime":null,"dividtime":null,"consciousness":null,"diagnosis":null,"admission":null,"dividenurse":null,"registertime":null,"bornday":null,"patient_id":"2012010115","greenchannel":null,"grade":null,"gender":null,"observegradecolor":null,"hisid":null,"addbedsign":"1","cixu":null,"grade_color":null,"bedarrivetime":"2020-12-01 16:42:24","bedleavetime":null,"finalgrade":null,"bed_id":"744871544420827136","rowno":17,"falling":null,"bed_num":"留观+1床","process":"","address":null,"anamnesis":null,"bedSTATUS":"使用中","dividdepartment":null,"doctor":null,"cardnum":null,"braden":null,"PADDiagDesc":null,"fullname":null,"category":null,"autograde":null,"age":null,"memberstel":null,"changereason":null},{"receivedepartment":null,"arrivetime":null,"depart_id":"584043716574969856","suizhen":"","observegrade":null,"type":null,"grade1":null,"STATUS":null,"leavetime":null,"tel":null,"id":null,"others":null,"receivetime":null,"dividtime":null,"consciousness":null,"diagnosis":null,"admission":null,"dividenurse":null,"registertime":null,"bornday":null,"patient_id":null,"greenchannel":null,"grade":null,"gender":null,"observegradecolor":null,"hisid":null,"addbedsign":"1","cixu":null,"grade_color":null,"bedarrivetime":null,"bedleavetime":null,"finalgrade":null,"bed_id":"742704279977984000","rowno":15,"falling":null,"bed_num":"留观+2床","process":"","address":null,"anamnesis":null,"bedSTATUS":"空闲","dividdepartment":null,"doctor":null,"cardnum":null,"braden":null,"PADDiagDesc":null,"fullname":null,"category":null,"autograde":null,"age":null,"memberstel":null,"changereason":null},{"receivedepartment":null,"arrivetime":null,"depart_id":"584043716574969856","suizhen":"","observegrade":null,"type":null,"grade1":null,"STATUS":null,"leavetime":null,"tel":null,"id":null,"others":null,"receivetime":null,"dividtime":null,"consciousness":null,"diagnosis":null,"admission":null,"dividenurse":null,"registertime":null,"bornday":null,"patient_id":null,"greenchannel":null,"grade":null,"gender":null,"observegradecolor":null,"hisid":null,"addbedsign":"2","cixu":null,"grade_color":null,"bedarrivetime":null,"bedleavetime":null,"finalgrade":null,"bed_id":"744871512439259136","rowno":16,"falling":null,"bed_num":"留观1平车","process":"","address":null,"anamnesis":null,"bedSTATUS":"空闲","dividdepartment":null,"doctor":null,"cardnum":null,"braden":null,"PADDiagDesc":null,"fullname":null,"category":null,"autograde":null,"age":null,"memberstel":null,"changereason":null},{"receivedepartment":null,"arrivetime":null,"depart_id":"584043716574969856","suizhen":"","observegrade":null,"type":null,"grade1":null,"STATUS":null,"leavetime":null,"tel":null,"id":null,"others":null,"receivetime":null,"dividtime":null,"consciousness":null,"diagnosis":null,"admission":null,"dividenurse":null,"registertime":null,"bornday":null,"patient_id":null,"greenchannel":null,"grade":null,"gender":null,"observegradecolor":null,"hisid":null,"addbedsign":"2","cixu":null,"grade_color":null,"bedarrivetime":null,"bedleavetime":null,"finalgrade":null,"bed_id":"744871585839579136","rowno":18,"falling":null,"bed_num":"留观2平车","process":"","address":null,"anamnesis":null,"bedSTATUS":"空闲","dividdepartment":null,"doctor":null,"cardnum":null,"braden":null,"PADDiagDesc":null,"fullname":null,"category":null,"autograde":null,"age":null,"memberstel":null,"changereason":null}],"status":200}
+[2020-12-01 16:46:58,655-logger.py]-INFO:检查点:"message":"查询成功"--pass
+[2020-12-01 16:46:58,656-logger.py]-INFO:----------------
+[2020-12-01 16:46:58,657-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:46:58,658-logger.py]-INFO:----------------
+[2020-12-01 16:46:58,658-logger.py]-INFO:
+
+
+[2020-12-01 16:46:58,920-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：5.0
+接口地址：/triageobserve/index/getWard
+用例名称：留观工作站-查询留观工作站Ward
+用例描述：测试留观工作站-查询留观工作站Ward
+请求内容：user_id=2000008
+实际响应：{"total":null,"message":"获取成功","rows":{"name":"留观室1","id":"584043716574969856"},"status":200}
+[2020-12-01 16:46:58,921-logger.py]-INFO:检查点:"message":"获取成功"--pass
+[2020-12-01 16:46:58,923-logger.py]-INFO:----------------
+[2020-12-01 16:46:58,924-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:46:58,925-logger.py]-INFO:----------------
+[2020-12-01 16:46:58,927-logger.py]-INFO:
+
+
+[2020-12-01 16:46:59,197-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：6.0
+接口地址：/triageobserve/index/seachUnReceivePatient
+用例名称：留观工作站-查询待接诊患者
+用例描述：测试留观工作站-查询待接诊患者列表
+请求内容：
+实际响应：{"total":0,"message":"查询成功","rows":[],"status":200}
+[2020-12-01 16:46:59,198-logger.py]-INFO:检查点:"message":"查询成功"--pass
+[2020-12-01 16:46:59,198-logger.py]-INFO:----------------
+[2020-12-01 16:46:59,199-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:46:59,200-logger.py]-INFO:----------------
+[2020-12-01 16:46:59,200-logger.py]-INFO:
+
+
+[2020-12-01 16:46:59,415-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：7.0
+接口地址：/triageobserve/divid/queryHisSerialnum
+用例名称：留观工作站-查询所有床位信息
+用例描述：测试留观工作站-查询所有床位信息
+请求内容：pid=2012010118
+实际响应：{"total":null,"message":"查询成功","rows":null,"status":200}
+[2020-12-01 16:46:59,417-logger.py]-INFO:检查点:"message":"查询成功"--pass
+[2020-12-01 16:46:59,418-logger.py]-INFO:----------------
+[2020-12-01 16:46:59,420-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:46:59,421-logger.py]-INFO:----------------
+[2020-12-01 16:46:59,422-logger.py]-INFO:
+
+
+[2020-12-01 16:46:59,709-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：8.0
+接口地址：/triageobserve/patienttrace/querySpecialOptions
+用例名称：留观工作站-查询特殊标签
+用例描述：测试留观工作站-查询特殊标签
+请求内容：
+实际响应：{"total":null,"message":"查询成功","rows":[{"name":"特殊患者","id":"595271300872667136","addr":"特殊"},{"name":"欠费患者","id":"595271687864320000","addr":"欠费"},{"name":"乙流患者","id":"595271852620775424","addr":"乙流"},{"name":"甲流患者","id":"595272044707315712","addr":"甲流"},{"name":"外宾","id":"595272114634752000","addr":"外宾"},{"name":"本院","id":"595272337717198848","addr":"本院"},{"name":"大小","id":"595284826911670272","addr":"大"}],"status":200}
+[2020-12-01 16:46:59,711-logger.py]-INFO:检查点:"message":"查询成功"--pass
+[2020-12-01 16:46:59,713-logger.py]-INFO:----------------
+[2020-12-01 16:46:59,714-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:46:59,715-logger.py]-INFO:----------------
+[2020-12-01 16:46:59,716-logger.py]-INFO:
+
+
+[2020-12-01 16:46:59,977-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：9.0
+接口地址：/triageobserve/index/saveSpecial2
+用例名称：留观工作站-患者报特殊
+用例描述：测试留观工作站-患者报特殊
+请求内容：id=2012010118&cardnum=698515201409066985&type=595271300872667136,
+实际响应：{"total":null,"message":"操作成功！","rows":null,"status":200}
+[2020-12-01 16:46:59,978-logger.py]-INFO:检查点:"message":"操作成功！"--pass
+[2020-12-01 16:46:59,979-logger.py]-INFO:----------------
+[2020-12-01 16:46:59,980-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:46:59,981-logger.py]-INFO:----------------
+[2020-12-01 16:46:59,981-logger.py]-INFO:
+
+
+[2020-12-01 16:47:00,486-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：10.0
+接口地址：/triageobserve/index/setBed
+用例名称：留观工作站-患者接诊分床
+用例描述：测试留观工作站-患者接诊分床
+请求内容：bed_id=742704279977984000&pid=2012010118&ward_id=584043716574969856&nurseid=2000008&cancel=
+实际响应：{"total":null,"message":"操作成功","rows":"742704279977984000","status":200}
+[2020-12-01 16:47:00,488-logger.py]-INFO:检查点:"message":"操作成功"--pass
+[2020-12-01 16:47:00,489-logger.py]-INFO:----------------
+[2020-12-01 16:47:00,490-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:47:00,492-logger.py]-INFO:----------------
+[2020-12-01 16:47:00,493-logger.py]-INFO:
+
+
+[2020-12-01 16:47:00,838-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：11.0
+接口地址：/triageobserve/patienttrace/queryPatientInfoByPId
+用例名称：留观工作站-查询留观患者信息
+用例描述：测试留观工作站-查询留观患者信息
+请求内容：patientid=2012010118
+实际响应：{"total":null,"message":"查询成功","rows":{"hsctnl":null,"tw":null,"braden_before":null,"tz":null,"ddimer":null,"gradename":null,"hx":null,"fer":null,"mb":null,"leavetime":null,"ssy":null,"id":"2012010118","depart":"急诊内科","bednum":"留观+2床","others":"","fzautograde":"1002","wardname":"留观室1","consciousness":"模糊","admission":"步行","gradecolor":null,"dividenurse":null,"ntprobnp":null,"bornday":"1993-09-06","fzfinalgrade":"","greenchannel":"N","name":"毛青","teshu":"595271300872667136","leavedirection":null,"cea":null,"status":"已接诊","myo":null,"gender":"男","hisid":"","observefinishtime":null,"PAADMVisitNumber":"","bedarrivetime":"2020-12-01 16:46:32","ckmb":null,"sg":null,"ctnt":null,"pcn":null,"addr":"特殊","ca":null,"finalgrade":null,"crp":null,"bed_id":"742704279977984000","anamnesis":"无","afp":null,"dividdepartment":null,"cardnum":"698515201409066985","il6":null,"szy":null,"spo2":null,"idcard":"350814199309068563","category":"肚子疼肚子疼","autograde":null,"age":"27岁"},"status":200}
+[2020-12-01 16:47:00,840-logger.py]-INFO:检查点:"message":"查询成功"--pass
+[2020-12-01 16:47:00,841-logger.py]-INFO:----------------
+[2020-12-01 16:47:00,843-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:47:00,845-logger.py]-INFO:----------------
+[2020-12-01 16:47:00,846-logger.py]-INFO:
+
+
+[2020-12-01 16:47:01,234-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：12.0
+接口地址：/triageobserve/index/cancelBed
+用例名称：留观工作站-在床患者退回待接诊
+用例描述：测试留观工作站-在床患者退回待接诊
+请求内容：cancel_pid=2012010118&cancel_bedid=742704279977984000
+实际响应：{"total":null,"message":"操作成功","rows":null,"status":200}
+[2020-12-01 16:47:01,236-logger.py]-INFO:检查点:"message":"操作成功"--pass
+[2020-12-01 16:47:01,237-logger.py]-INFO:----------------
+[2020-12-01 16:47:01,239-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:47:01,241-logger.py]-INFO:----------------
+[2020-12-01 16:47:01,242-logger.py]-INFO:
+
+
+[2020-12-01 16:47:01,840-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：13.0
+接口地址：/triageobserve/index/setBed
+用例名称：留观工作站-患者再次接诊分床
+用例描述：测试留观工作站-患者再次接诊分床
+请求内容：bed_id=742704279977984000&pid=2012010118&ward_id=584043716574969856&nurseid=2000008&cancel=
+实际响应：{"total":null,"message":"操作成功","rows":"742704279977984000","status":200}
+[2020-12-01 16:47:01,842-logger.py]-INFO:检查点:"message":"操作成功"--pass
+[2020-12-01 16:47:01,843-logger.py]-INFO:----------------
+[2020-12-01 16:47:01,845-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:47:01,846-logger.py]-INFO:----------------
+[2020-12-01 16:47:01,848-logger.py]-INFO:
+
+
+[2020-12-01 16:47:02,355-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：14.0
+接口地址：/triageobserve/divid/queryPatientById
+用例名称：留观工作站-根据患者id查询患者信息
+用例描述：测试留观工作站-根据患者id查询患者信息
+请求内容：id=2012010118&cardnum=
+实际响应：{"total":null,"message":"查询成功","rows":{"receivedepartment":"584043716574969856","occupation":null,"education":null,"psychological":null,"nation":null,"urine":null,"tz":"55","arrivetime":null,"marry":null,"self_care":null,"language":null,"source":"自行来院","STATUS":"已接诊","habit":null,"leavetime":null,"sight":null,"understanding":null,"tel":"13525213510","id":"2012010118","communication":null,"others":"","receivetime":"2020-12-01 16:46:34","dividtime":"2020-10-07 13:34:00","create_time":"2020-12-01 16:46:32","shape":null,"consciousness":"模糊","diagnosis":"","create_nurse":"","admission":"步行","dividenurse":"高博","drug_assisted_sleep":null,"registertime":null,"bornday":"1993-09-06","greenchannel":"N","leavedirection":null,"gender":"男","dividleavedirection":"{\"dre\":\"留观\",\"dremsg\":\"\"}","iid":"783373483995299840","hisid":"","skin":"","cixu":"1","sleep":null,"sg":"170","allergic_history":"不详","parenttel":"15721028988","is_del":"0","hearing":null,"finalgrade":"","bed_num":"742704279977984000","address":"江苏省南京市鼓楼区归云堂30号金城花园","anamnesis":"无","propaganda":null,"nursing_plan":null,"catheterization":null,"signurl":"","card_type":"01","family_attitude":null,"dividdepartment":"39","doctor":"","cardnum":"698515201409066985","mouth":null,"PADDiagDesc":null,"shit":null,"idcard":"350814199309068563","fullname":"毛青","category":"1","autograde":"1002","age":"27岁","memberstel":"夏东海","changereason":"选择修改原因"},"status":200}
+[2020-12-01 16:47:02,357-logger.py]-INFO:检查点:"message":"查询成功"--pass
+[2020-12-01 16:47:02,359-logger.py]-INFO:----------------
+[2020-12-01 16:47:02,360-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:47:02,362-logger.py]-INFO:----------------
+[2020-12-01 16:47:02,364-logger.py]-INFO:
+
+
+[2020-12-01 16:47:02,744-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：15.0
+接口地址：/triageobserve/obspatient/saveObsPatient
+用例名称：留观工作站-在床患者病人登记保存
+用例描述：测试留观工作站-留观工作站-在床患者病人登记保存
+请求内容：id=&pid=2012010118&hisid=&cardnum=698515201409066985&age=27岁&fullname=毛青&diagnosis=&arrive_time=2020-12-01 16:47&idcard=350814199309068563&num=201030004&gender=男&bornday=1993-09-06&address=江苏省南京市鼓楼区归云堂30号金城花园&leave_time=&phone=13525213510&depart=39&doctor=&rescue=是&anamnesis=无&allergic_history=不详&admission_num=&admission=步入&decubitus=半卧&consciousness=清楚&bilateral_pupil=等大等圆&light_response=灵敏&skin=正常&face=正常&pupil=0.3&left_pupil=&right_pupil=&illness=&key_obs=&tw=&mb=&ssy=&szy=&hx=&nurseid=2000008&nursename=王旭东&result=&edtsgrade1=&edts_ids_qitastatus1=false&edts_ids1=&edts_ids_qita1=&edtsgrade2=&edts_ids_qitastatus2=false&edts_ids2=&edts_ids_qita2=&edts_score1=&edts_score2=&ward_id=584043716574969856&suizhen=0
+实际响应：{"total":null,"message":"添加成功","rows":"2012010118","status":200}
+[2020-12-01 16:47:02,744-logger.py]-INFO:检查点:"message":"添加成功"--pass
+[2020-12-01 16:47:02,745-logger.py]-INFO:----------------
+[2020-12-01 16:47:02,745-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:47:02,745-logger.py]-INFO:----------------
+[2020-12-01 16:47:02,746-logger.py]-INFO:
+
+
+[2020-12-01 16:47:03,063-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：16.0
+接口地址：/triageobserve/nursingrecord/confirmNursingRecord
+用例名称：留观工作站-在床患者保存护理记录1
+用例描述：测试留观工作站-留观工作站-在床患者保存护理记录1
+请求内容：hljlid=&patientid=2012010118&currenttime=2020-12-01 16:47&T=36.8&HR=65&R=74&BP=85/105&SPO2=96&rescuemeasure=无创监测:血压。静脉通道:左手普通头皮针;共1条通道&nursesignature=王旭东&nurseid=2000008&roleid=200002&consciousness=清楚&retest=
+实际响应：{"total":null,"message":"新增成功","rows":{"recordid":"","hljlid":"783373494627860480"},"status":200}
+[2020-12-01 16:47:03,065-logger.py]-INFO:检查点:"message":"新增成功"--pass
+[2020-12-01 16:47:03,067-logger.py]-INFO:----------------
+[2020-12-01 16:47:03,069-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:47:03,071-logger.py]-INFO:----------------
+[2020-12-01 16:47:03,072-logger.py]-INFO:
+
+
+[2020-12-01 16:47:03,853-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：17.0
+接口地址：/triageobserve/divid/SavePatientGrade
+用例名称：留观工作站-在床患者保存护理记录2
+用例描述：测试留观工作站-留观工作站-在床患者保存护理记录2
+请求内容：handleid=&hljlid=783373494627860480&p_id=2012010118&autograde=1003&finalgrade=&changereason=&reasondetail=&nurseid=2000008&nursename=王旭东&symtpomids=&edts_ids=&edts_ids_qitastatus=false&edts_ids_qita=&mews_ids=&obs_mews_ids=obs-mews-4-2,obs-mews-2-3,obs-mews-1-3,obs-mews-3-5,obs-mews-5-1&edts_score=&mews_score=&pain_score=&gcs_score=&obs_mews_score=4&edts_grade=&mews_grade=&pain_grade=&gcs_grade=&obs_mews_grade=1003&hx=74&tw=36.8&mb=65&szy=105&ssy=85&spo2=96&dividtime=2020-12-01 16:47
+实际响应：{"total":null,"message":"保存成功","rows":{"maxcixu":1,"handleid":"783373495982620672"},"status":200}
+[2020-12-01 16:47:03,854-logger.py]-INFO:检查点:"message":"保存成功"--pass
+[2020-12-01 16:47:03,856-logger.py]-INFO:----------------
+[2020-12-01 16:47:03,857-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:47:03,859-logger.py]-INFO:----------------
+[2020-12-01 16:47:03,860-logger.py]-INFO:
+
+
+[2020-12-01 16:47:04,418-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：18.0
+接口地址：/triageobserve/nursingrecord/saveUseMedicine2
+用例名称：留观工作站-在床患者保存护理记录3
+用例描述：测试留观工作站-留观工作站-在床患者保存护理记录3
+请求内容：patientid=2012010118&nursesignature=王旭东&nurseid=2000008&hljlid=783373494627860480&usemedicinelist=[{"medicinename":"长效西林","medicinecode":"medicinecode1","medicinedosage":"20","medicineunit":"ml","medicineway":"静滴","medicinetimes":"ST","skin_test":"是||-阴性"}]&recordid=&his_med_ids="undefined"
+实际响应：{"total":null,"message":"新增成功","rows":null,"status":200}
+[2020-12-01 16:47:04,420-logger.py]-INFO:检查点:"message":"新增成功"--pass
+[2020-12-01 16:47:04,421-logger.py]-INFO:----------------
+[2020-12-01 16:47:04,423-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:47:04,424-logger.py]-INFO:----------------
+[2020-12-01 16:47:04,425-logger.py]-INFO:
+
+
+[2020-12-01 16:47:05,152-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：19.0
+接口地址：/triageobserve/bradenScore/saveScore
+用例名称：留观工作站-在床患者保存压疮发生危险因素评估
+用例描述：测试留观工作站-留观工作站-在床患者保存压疮发生危险因素评估
+请求内容：id=&pid=2012010118&oppression=4&skip=4&body_move=4&change_body=4&nutritional_status=3&rub=2&danger=健康&total=21&cixu=1&create_nurse=王旭东&create_nurseid=2000008&create_time=2020-12-01 16:47&barden_prevent=&brader_ids=b-1-4,b-2-4,b-3-4,b-4-4,b-5-3,b-6-2
+实际响应：{"total":null,"message":"操作成功！","rows":null,"status":200}
+[2020-12-01 16:47:05,154-logger.py]-INFO:检查点:"message":"操作成功！"--pass
+[2020-12-01 16:47:05,154-logger.py]-INFO:----------------
+[2020-12-01 16:47:05,155-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:47:05,156-logger.py]-INFO:----------------
+[2020-12-01 16:47:05,157-logger.py]-INFO:
+
+
+[2020-12-01 16:47:05,678-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：20.0
+接口地址：/triageobserve/assessmentMeasure/saveScore
+用例名称：留观工作站-在床患者-新增观察病房危重患者护理风险评估及防范措施单
+用例描述：留观工作站-在床患者-新增观察病房危重患者护理风险评估及防范措施单
+请求内容：pid=2012010118&create_nurse=王旭东&create_nurseid=2000008&create_time=2020-12-01 16:47&aid=1003,1004
+实际响应：{"total":null,"message":"操作成功！","rows":null,"status":200}
+[2020-12-01 16:47:05,680-logger.py]-INFO:检查点:"message":"操作成功！"--pass
+[2020-12-01 16:47:05,682-logger.py]-INFO:----------------
+[2020-12-01 16:47:05,683-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:47:05,685-logger.py]-INFO:----------------
+[2020-12-01 16:47:05,686-logger.py]-INFO:
+
+
+[2020-12-01 16:47:06,064-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：21.0
+接口地址：/triageobserve/assessmentMeasure/getScoreList
+用例名称：留观工作站-在床患者-查询刚保存的观察病房危重患者护理风险评估及防范措施单
+用例描述：留观工作站-在床患者-查询刚保存的观察病房危重患者护理风险评估及防范措施单
+请求内容：pid=2012010118
+实际响应：{"total":2,"message":"获取成功","rows":[{"assessment":"低血糖/血压异常/心律失常/心功能3级或4级","measure":"给予持续心电监护，监测生命体征，确认抢救药品、器械、导联线、报警设置等完好状态。","create_time":"2020-12-01 16:47:00","create_nurseid":"2000008","pid":"2012010118","id":"783373505075871744","create_nurse":"王旭东","aid":"1003"},{"assessment":"频繁呕吐/腹泻/吞咽困难/营养不良","measure":"监测实验室各项检查，确认胃管的通畅和位置，观察胃管引流的性质，观察各种排泄物的量、性质。","create_time":"2020-12-01 16:47:00","create_nurseid":"2000008","pid":"2012010118","id":"783373505688240128","create_nurse":"王旭东","aid":"1004"}],"status":200}
+[2020-12-01 16:47:06,066-logger.py]-INFO:检查点:"message":"获取成功"--pass
+[2020-12-01 16:47:06,068-logger.py]-INFO:----------------
+[2020-12-01 16:47:06,069-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:47:06,070-logger.py]-INFO:----------------
+[2020-12-01 16:47:06,072-logger.py]-INFO:检查点:"total":2--pass
+[2020-12-01 16:47:06,072-logger.py]-INFO:----------------
+[2020-12-01 16:47:06,073-logger.py]-INFO:
+
+
+[2020-12-01 16:47:07,342-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：22.0
+接口地址：/triageobserve/index/interChangeBed
+用例名称：留观工作站-在床患者-转床
+用例描述：留观工作站-在床患者-转床
+请求内容：patientid1=2012010118&bedid2=744871512439259136&nurseid=2000008&nursename=王旭东&wardid=584043716574969856
+实际响应：{"total":null,"message":"转床成功","rows":{"fullname1":"毛青","bednum2":"留观1平车","fullname2":"空床","bednum1":"留观+2床"},"status":200}
+[2020-12-01 16:47:07,343-logger.py]-INFO:检查点:"message":"转床成功"--pass
+[2020-12-01 16:47:07,343-logger.py]-INFO:----------------
+[2020-12-01 16:47:07,344-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:47:07,344-logger.py]-INFO:----------------
+[2020-12-01 16:47:07,344-logger.py]-INFO:
+
+
+[2020-12-01 16:47:07,846-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：23.0
+接口地址：/triageobserve/patienttrace/savePatientLeaveDirection
+用例名称：留观工作站-在床患者-去向1
+用例描述：留观工作站-在床患者-去向1
+请求内容：department=留观室1&patientid=2012010118&leavedirection={"dre":"门诊专家","dremsg":""}&qxtime=2020-12-01 16:47&nurseid=2000008&PATPatientID=&PAADMVisitNumber=
+实际响应：{"total":null,"message":"操作成功","rows":1,"status":200}
+[2020-12-01 16:47:07,848-logger.py]-INFO:检查点:"message":"操作成功"--pass
+[2020-12-01 16:47:07,849-logger.py]-INFO:----------------
+[2020-12-01 16:47:07,851-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:47:07,853-logger.py]-INFO:----------------
+[2020-12-01 16:47:07,854-logger.py]-INFO:
+
+
+[2020-12-01 16:47:08,296-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：24.0
+接口地址：/triageobserve/nursingrecord/confirmNursingRecord
+用例名称：留观工作站-在床患者-去向2（保存护理记录）
+用例描述：测试留观工作站-留观工作站-在床患者-去向2（保存护理记录）
+请求内容：hljlid=&patientid=2012010118&currenttime=2020-12-01 16:47&T=36.2&HR=62&R=63&BP=89/102&SPO2=98&ETCO2=&rescuemeasure=去向:门诊专家&nursesignature=王旭东&nurseid=2000008
+实际响应：{"total":null,"message":"新增成功","rows":{"recordid":"","hljlid":"783373516304023552"},"status":200}
+[2020-12-01 16:47:08,298-logger.py]-INFO:检查点:"message":"新增成功"--pass
+[2020-12-01 16:47:08,300-logger.py]-INFO:----------------
+[2020-12-01 16:47:08,301-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:47:08,303-logger.py]-INFO:----------------
+[2020-12-01 16:47:08,304-logger.py]-INFO:
+
+
+[2020-12-01 16:47:10,332-logger.py]-INFO:
+用例路径：C:\Users\Administrator\PycharmProjects\ecs_ddt_htmltestrunner\data\留观工作站\留观工作站.xlsx
+接口名称：留观工作站
+用例编号：25.0
+接口地址：/triageobserve/patienttrace/savePatientLeaveDirectionAndLeaveTime
+用例名称：留观工作站-在床患者-离开留观
+用例描述：留观工作站-在床患者-离开留观
+请求内容：department=留观室1&patientid=2012010118&leavedirection={"dre":"离开留观","dremsg":""}&qxtime=2020-12-01 16:47&nurseid=2000008
+实际响应：{"total":null,"message":"操作成功","rows":1,"status":200}
+[2020-12-01 16:47:10,333-logger.py]-INFO:检查点:"message":"操作成功"--pass
+[2020-12-01 16:47:10,333-logger.py]-INFO:----------------
+[2020-12-01 16:47:10,334-logger.py]-INFO:检查点:"status":200--pass
+[2020-12-01 16:47:10,335-logger.py]-INFO:----------------
+[2020-12-01 16:47:10,335-logger.py]-INFO:
+
+

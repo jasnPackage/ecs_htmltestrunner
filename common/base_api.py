@@ -1,7 +1,8 @@
 # coding:utf-8
-import json
+import json,xlrd,openpyxl
 import requests,ast,datetime,re,time
 from common.readexcel import ExcelUtil
+from openpyxl.styles import Font,Alignment
 from common.write_excel import copy_excel, Write_excel
 from config import readConfig
 from common import base_login,base_rely
@@ -12,17 +13,32 @@ from common.comm_function import *
 
 mysql_db = MysqlUtil()
 log = Log()
-cookies = ''
+cookies = rely_func = ''
+count_rows = 0
 
 
 def send_requests(s, testdata):
-
     pass_case = 0  # 通过用例数标识
     fail_case = 0  # 失败用例数标识
     res = {}  # 接受返回数据
     # 接口地址
     interface_address = testdata["接口地址"]
-    global cookies
+    global cookies,rely_func,count_rows
+
+    book = xlrd.open_workbook(testdata['用例路径'])
+    '''
+    使用openpyxl操作excel，openpyxl支持excel2007以上版本
+    '''
+    wb = openpyxl.load_workbook(testdata['用例路径'])
+    ws = wb.worksheets[1]
+    font_green = Font(color="37b400")
+    font_red = Font(color="ff0000")
+
+    '''
+    获取excel文件中测试用例信息，将A-K列转换成字典存储
+    '''
+    sheet = book.sheet_by_index(1)  # 通过索引，获取相应的列表，这里表示获取excel的第二个列表
+    ncols = sheet.ncols  # 获取所有列数
 
     '''
     获取cfg.ini配置文件中接口公共信息（ip和port）和run_config.ini配置文件中
@@ -46,7 +62,7 @@ def send_requests(s, testdata):
     }
 
     # 读取测试用例的数据
-    par = testdata["请求体body"]
+    par = testdata["请求内容"]
     userlogin_token = testdata["是否需要登录token"]
     teardown_sql = testdata["teardown执行SQL"]
     rely_datas = testdata["依赖数据"]
@@ -132,8 +148,15 @@ def send_requests(s, testdata):
             for exec_sql in exec_sqls:
                 mysql_db.mysql_execute(exec_sql)
 
-        log.info("\n用例编号：%s\n接口地址：%s\n用例名称：%s\n用例描述：%s\n请求内容：%s\n实际响应：%s" % (
-        testdata["用例编号"], interface_address, testdata["用例名称"], testdata["用例描述"], par, result))
+        # 先清空实际响应单元格的内容
+        ws.cell(row=testdata['rowNum'], column=ncols-3, value='')
+        # 设置实际响应写入的内容中对齐方式，居中对齐
+        align = Alignment(horizontal='left', vertical='center', wrap_text=True)  # 纯色填充
+        # 将实际响应写入测试用例文件中
+        ws.cell(row=testdata['rowNum'], column=ncols-3, value=result).alignment = align
+
+        log.info("\n用例路径：%s\n接口名称：%s\n用例编号：%s\n接口地址：%s\n用例名称：%s\n用例描述：%s\n请求内容：%s\n实际响应：%s" % (
+        testdata["用例路径"], testdata["接口名称"], testdata["用例编号"], interface_address, testdata["用例名称"], testdata["用例描述"], par, result))
 
         checkPoints = testdata["检查点"]
         json_result = json.loads(result)
@@ -167,18 +190,23 @@ def send_requests(s, testdata):
                         log.info("检查点:%s--pass" % new_checkPoint)
                         log.info("----------------")
                     else:
-                        # ws.write(i,ncols-1,'fail'.encode('utf-8'))
-                        # ws.cell(row=i + 1, column=ncols, value='Fail').font = font_red
                         checkPoint_fail += 1
                         log.error("检查点:%s--fail" % new_checkPoint)
                         log.info("----------------")
-
+            log.info("\n\n")
             if checkPoint_pass == len(list_checkPoints):
                 pass_case += 1
+                ws.cell(row=testdata['rowNum'], column=ncols, value='Pass').font = font_green
                 res["执行结果"] = "Pass"
             else:
                 fail_case += 1
+                ws.cell(row=testdata['rowNum'], column=ncols, value='Fail').font = font_red
                 res["执行结果"] = "Fail"
+        else:
+            log.info("预置数据用例，不需要检查点")
+            log.info("----------------")
+            log.info("\n\n")
+            res["执行结果"] = ''
 
         # 用例执行结束时间
         now_time = datetime.datetime.now()
@@ -188,42 +216,19 @@ def send_requests(s, testdata):
         res["执行耗时"] = elapse_time
 
         # 先清空执行耗时单元格的内容
-        # ws.cell(row=i + 1, column=ncols - 1, value='')
-
+        ws.cell(row=testdata['rowNum'], column=ncols-1, value='')
         # 将用例执行耗时写入测试用例中
-        # ws.cell(row=i + 1, column=ncols - 1, value=elapse_time).alignment = align
+        ws.cell(row=testdata['rowNum'], column=ncols-1, value=elapse_time).alignment = align
 
         # 最近一次用例执行时间
         execution_time = now_time.strftime('%Y-%m-%d %H:%M:%S')
         res["最近一次执行时间"] = execution_time
-        # ws.cell(row=i + 1, column=ncols - 2, value=execution_time).alignment = align
-        return res
+        ws.cell(row=testdata['rowNum'], column=ncols-2, value=execution_time).alignment = align
 
         # 保存测试用例文件
-        # wb.save(os.path.join(data_path, filename))
+        wb.save(testdata['用例路径'])
     else:
         log.info("用例编号:%s--非指定运行级别的用例，不执行" % testdata["用例编号"])
+    return res
 
-def wirte_result(result, filename="result.xlsx"):
-    # 返回结果的行数row_nub
-    row_nub = result['rowNum']
-    # 写入statuscode
-    wt = Write_excel(filename)
-    wt.write(row_nub, 8, result['statuscode'])       # 写入返回状态码statuscode,第8列
-    wt.write(row_nub, 9, result['times'])            # 耗时
-    wt.write(row_nub, 10, result['error'])            # 状态码非200时的返回信息
-    wt.write(row_nub, 12, result['result'])           # 测试结果 pass 还是fail
-    wt.write(row_nub, 13, result['msg'])           # 抛异常
 
-if __name__ == "__main__":
-    for filepath in get_excelpath():
-        datas = ExcelUtil(filepath).dict_data()
-        print(datas)
-        for data in datas:
-            s = requests.session()
-            res = send_requests(s, data)
-            # print(res)
-            time.sleep(0.2)
-
-    # copy_excel("debug_api.xlsx", "result.xlsx")
-    # wirte_result(res, filename="result.xlsx")
