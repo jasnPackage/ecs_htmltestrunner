@@ -32,7 +32,7 @@ class ExcelUtil():
             return r
 
 
-if __name__ == "__main__":
-    for filepath in get_excelpath():
-        data = ExcelUtil(filepath)
-        print(data.dict_data())
+# if __name__ == "__main__":
+#     for filepath in get_excelpath():
+#         data = ExcelUtil(filepath)
+#         print(data.dict_data())

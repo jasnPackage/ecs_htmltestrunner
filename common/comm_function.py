@@ -96,7 +96,7 @@ def get_excelpath():
     parent_path = os.path.dirname(d)  # 返回common的父级目录
     data_path = os.path.join(parent_path, 'data')  # 返回data所在目录
     case_path = get_excel_lists(data_path)  # 返回data目录下所有的excel文件
-    print(case_path)
+    # print(case_path)
     return case_path
 
 
@@ -130,6 +130,11 @@ def get_cookie(login_token,address):
     elif address.find('/triagerescue/') >= 0:
         if login_token == '是':
             cookies = triagerescue_userlogin_cookies()
+        else:
+            cookies = ''
+    elif address.find('/triageobserve/') >= 0:
+        if login_token == '是':
+            cookies = base_login.triageobserve_userlogin_cookies()
         else:
             cookies = ''
     return cookies
@@ -214,4 +219,6 @@ def get_userid():
     userid = mysqlutil.mysql_getstring(SQL)
     return str(userid)
 
+
+# get_excelpath()
 

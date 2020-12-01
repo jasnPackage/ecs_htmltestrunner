@@ -2,7 +2,7 @@
 
 import logging,os,time
 #日志保存本地的路径
-log_path = "C:\\Users\\Administrator\\PycharmProjects\\ECS\\logs"
+log_path = "C:\\Users\\Administrator\\PycharmProjects\\ecs_HTMLTestRunner\\logs"
 
 class Log:
     def __init__(self):
