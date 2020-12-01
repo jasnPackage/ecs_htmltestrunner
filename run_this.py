@@ -1,13 +1,10 @@
 #coding:utf-8
 
-# coding=utf-8
 import unittest
 from TestRunner import HTMLTestRunner
 import time
 import os
 
-# 作者：上海-悠悠
-# QQ群：226296743
 
 curpath = os.path.dirname(os.path.realpath(__file__))
 report_path = os.path.join(curpath, "report")
