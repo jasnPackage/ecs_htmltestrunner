@@ -22,5 +22,21 @@ class Test_api(unittest.TestCase):
     @ddt.data(*casedata)
     def test_api(self,data):
         res = send_requests(self.s,data)
+
+        # # 检查点 checkpoint
+        # check = data["检查点"]
+        # print("检查点->：%s" % check)
+        # # 返回结果
+        # res_text = res["实际响应"]
+        # print("返回实际结果->：%s" % res_text)
+        # 执行结果
+        res_result = res["执行结果"]
+        print("返回执行结果->：%s" % res_result)
+        # 断言
+        if res_result == 'Pass':
+            self.assertTrue(True)
+        elif res_result == 'Fail':
+            self.assertFalse(True)
+
 if __name__ == '__main__':
     unittest.main()
